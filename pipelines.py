@@ -1,6 +1,6 @@
 from scrapy.exporters import CsvItemExporter
 
-FIELDNAMES = ['name', 'href', 'price', 'dollar_price', 'instock',
+FIELDNAMES = ['name', 'href', 'grivna_price', 'dollar_price', 'instock',
               'image_href', 'description', 'images_href', 'date_parsed']
 
 
