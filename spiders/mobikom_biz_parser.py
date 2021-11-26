@@ -5,7 +5,7 @@ import logging
 
 import bs4
 
-from parse_mobikom.item_fields_handler import ItemFieldsHandler
+from parse_mobikom.spiders.item_fields_handler import ItemFieldsHandler
 
 logger = logging.getLogger(__name__)
 

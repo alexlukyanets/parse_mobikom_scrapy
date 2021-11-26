@@ -1,9 +1,7 @@
-import datetime
-import json
 import logging
-import re
+import json
 
-from .exceptions import ValueConversionError
+from parse_mobikom.spiders.exceptions import ValueConversionError
 from urllib.parse import unquote_plus
 
 logger = logging.getLogger(__name__)
@@ -23,13 +21,8 @@ class ItemFieldsHandler:
         if not isinstance(value, str):
             raise TypeError(f'The value "{value}" does not string type')
         cleared_value = value.replace('$', '').strip()
-        if len(cleared_value) >= 3 and value[-3] in (',', '.'):
-            cleared_value = cleared_value[:-3] + '$' + cleared_value[-2:]
-        elif len(cleared_value) >= 2 and value[-2] in (',', '.'):
-            cleared_value = cleared_value[:-2] + '$' + cleared_value[-1:]
-        cleaned_value = cleared_value.replace('.', '').replace(',', '').replace('$', '.')
         try:
-            return float(cleaned_value)
+            return float(cleared_value)
         except ValueError:
             logger.error(f'The value "{value}" can not be converted to float')
             return

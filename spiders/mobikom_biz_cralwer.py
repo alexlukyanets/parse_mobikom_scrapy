@@ -7,11 +7,22 @@ import os
 import scrapy
 
 from .mobikom_biz_parser import MobikomBizParser, Product
-from ..items import ParseMobikomItem
 
 logger = logging.getLogger(__name__)
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
 load_dotenv(dotenv_path)
+
+
+class ParseMobikomItem(scrapy.Item):
+    name = scrapy.Field()
+    href = scrapy.Field()
+    grivna_price = scrapy.Field()
+    dollar_price = scrapy.Field()
+    instock = scrapy.Field()
+    image_href = scrapy.Field()
+    description = scrapy.Field()
+    images_href = scrapy.Field()
+    date_parsed = scrapy.Field()
 
 
 class MobikomBizCrawler(scrapy.Spider):
