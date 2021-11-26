@@ -1,7 +1,7 @@
 from scrapy.exporters import CsvItemExporter
 
-FIELDNAMES = ['name', 'href', 'grivna_price', 'dollar_price', 'instock',
-              'image_href', 'description', 'images_href', 'date_parsed']
+FIELDNAMES = ['name', 'href', 'grivna_price', 'dollar_price',
+              'instock', 'description', 'images_href', 'date_parsed']
 
 
 class ParseMobikomPipeline:

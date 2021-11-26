@@ -17,7 +17,6 @@ class Product:
     dollar_price: Optional[float] = None
     name: Optional[str] = None
     href: Optional[str] = None
-    image_href: Optional[str] = None
     description: Optional[str] = None
     images_href: List[str] = field(default_factory=list)
     date_parsed: Optional[datetime] = None
