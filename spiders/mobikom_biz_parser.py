@@ -156,7 +156,6 @@ class MobikomBizParser(ItemFieldsHandler):
             if not product.instock:
                 logger.info('Instock tag is not found')
                 continue
-
             yield product
 
     @classmethod
