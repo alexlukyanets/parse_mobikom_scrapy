@@ -39,7 +39,7 @@ class MobikomBizParser(ItemFieldsHandler):
         return 'в наличии'
 
     @classmethod
-    def parse_profile_page_data(cls, response):
+    def parse_profile_page_data(cls, response) -> Optional[User]:
         profile_data_dict = cls.deserialize(response.body_as_unicode())
         if not profile_data_dict:
             logger.error('Profile data is not found')
