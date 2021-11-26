@@ -223,7 +223,7 @@ class MobikomBizParser(ItemFieldsHandler):
         if not p_tag:
             logger.error('Error with extract grivna price. P_tag is not found')
             return
-        splitted_price = cls.clear_string(p_tag.text)
+        splitted_price = cls.clear_string(p_tag.text).split()
         if not splitted_price:
             return
         price_list = [item for item in splitted_price if item.replace('.', '').isdigit()]
