@@ -35,7 +35,7 @@ class User:
 
 class MobikomBizParser(ItemFieldsHandler):
     @staticmethod
-    def instock_value():
+    def instock_value() -> str:
         return 'в наличии'
 
     @classmethod
