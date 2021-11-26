@@ -47,13 +47,13 @@ class MobikomBizCrawler(scrapy.Spider):
     def domain_url() -> str:
         return 'http://mobikom.biz/'
 
-    @staticmethod
-    def login_url() -> str:
-        return 'https://mobikom.biz/account/logindata'
+    @classmethod
+    def login_url(cls) -> str:
+        return f'{cls.domain_url()}account/logindata'
 
-    @staticmethod
-    def profile_page_data_url() -> str:
-        return 'https://mobikom.biz/account/getprofilepagedata'
+    @classmethod
+    def profile_page_data_url(cls) -> str:
+        return f'{cls.domain_url()}account/getprofilepagedata'
 
     @classmethod
     def new_products_url(cls) -> str:
